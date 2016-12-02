@@ -1,0 +1,318 @@
+@import 'reset.less';
+
+
+/*头部栏目*/
+.topBar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 44px;
+  line-height: 44px;
+  border-bottom: 1px solid #ddd;
+  background: #fff;
+  color: #333;
+  z-index: 98;
+  input{
+    height: 24px;
+    line-height: 24px;
+    width: 70%;
+    margin-left: 15%;
+    background: #fff;
+    border: 1px solid #999999;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 1rem;
+  }
+  .leftIcon{
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    background: url(../img/sort.png) no-repeat;
+    background-size: cover;
+  }
+  .goBack{
+    position: absolute;
+    display: block;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    margin-top: -30px;
+    background: url(../img/back.png) no-repeat;
+    background-size: cover;
+  }
+  .sideBar{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: -150px;
+    width: 150px;
+    background-color: #fff;
+    color: #313131;
+    -webkit-transition: all .5s ease;
+    transition: all .5s ease;
+    z-index: 99;
+    text-align: center;
+    &.show{
+      -webkit-transform: translateX(150px);
+      transform: translateX(150px);
+    }
+    .icon{
+      width: 50%;
+      margin: 20px auto;
+      div{
+        position: relative;
+      }
+      div:before{
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: -10%;
+        width: 120%;
+        border-bottom: 1px solid #999999;
+      }
+    }
+    ul{
+      width: 70%;
+      margin: 0 auto;
+      li{
+        border-bottom: 1px dashed #cccccc;
+      }
+    }
+  }
+  .page-cover{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,.4);
+    z-index: 7;
+  }
+}
+
+
+/*列表页面*/
+.movie{
+  margin-top: 45px;
+  background: #f9f9f9;
+  ul{
+    li{
+      padding: 1rem;
+      border-bottom: 1px dotted #cccccc;
+      a{
+        display:box; display:-moz-box; display:-webkit-box;color: #000;
+        img{
+          width: 8rem;
+        }
+        .info{
+          margin-left: 1rem;
+          h3{
+            font-size: 1.6rem;
+            margin: 0.5rem 0 0.6rem;
+          }
+          .score{
+            color: #a1a1a1;
+            margin-bottom: 0.5rem;
+            font-size: 0.8rem;
+            span:last-child{
+              margin-left: 0.8rem;
+            }
+            span{
+              i{
+                color: #ffb400;
+              }
+            }
+          }
+          p{
+            margin-bottom: 0.8rem;
+            color: #666666;
+            span{
+              margin-right: 0.8rem;display: inline-block;
+              a{
+                display: inline-block;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+/*电影详情页面*/
+.details{
+  margin-top: 45px;
+  background: #f9f9f9;
+  padding: 1rem;
+  .banner{
+    img{
+      width: 12rem;
+      margin-right: 1rem;
+      padding: 0.8rem;
+      border: 1px solid #cccccc;
+    }
+    .vue-boxf1{
+      padding: 0.8rem;
+      h4{
+        font-size: 1.6rem;
+        margin-bottom: 0.5rem;
+      }
+      .num{
+        margin-top: 1rem;
+        span:last-child{
+          margin-top: 0.6rem;
+        }
+        span{
+          display: block;
+          i{
+            color: #ffc600;
+          }
+        }
+      }
+      ul{
+        margin-top: 2rem;
+        li{
+          float: left;
+          width: 45%;
+          background: rgba(93,98,105,.5);
+          border-radius: 0.5rem;
+          border: 1px solid #fff;
+          height: 2.5rem;
+          line-height: 2.5rem;
+          color: #fff;
+          text-align: center;
+        }
+        li:last-child{
+          float: right;
+        }
+      }
+    }
+  }
+  .info{
+    padding-top: 1rem;
+    p{
+      color: #4f4f4f;
+      font-size: 1.2rem;
+      line-height: 1.8rem;
+      text-indent: 2rem;
+    }
+  }
+}
+
+
+/*明星个人页面*/
+.celebrity{
+  margin-top: 44px;
+  background: #f9f9f9;
+  .bg{
+    background: url("../img/starbg.png") no-repeat;
+    height: 18rem;
+    padding: 2rem;
+    position: relative;
+    .clb-pic{
+      display: inline-block;
+      width: 10rem;
+      position: absolute;
+      bottom: 0;
+    }
+    .clb-name{
+      position: absolute;
+      left: 14rem;
+      bottom: 1.5rem;
+      color: #fff;
+      h3{
+        font-size: 1.6rem;
+      }
+      h5{
+        margin: 1rem 0;
+      }
+      span{
+        display: inline-block;
+        font-size: 1.2rem;
+        padding: 0.4rem 2rem;
+        border-radius: 5px;
+        border: 1px solid #fff;
+      }
+    }
+  }
+  .clb-de{
+    text-align: center;
+    padding: 1rem 0;
+    background: #fff;
+    li{
+      border-right: 1px solid #eeeeee;
+      i{
+        display: block;
+        color: #dd403b;
+        margin-bottom: 0.5rem;
+        font-size: 1.6rem;
+      }
+      span{
+        display: block;
+        color: #b0b0b0;
+      }
+    }
+  }
+  .clb-info{
+    background: #fff;
+    margin-top: 1.5rem;
+    padding: 2rem;
+    h4{
+      font-size: 1.6rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      width: 100%;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+    li{
+      color: #797979;
+      font-size: 1.3rem;
+      margin-top: 1rem;
+    }
+  }
+  .clb-works{
+    background: #fff;
+    margin-top: 1.5rem;
+    padding: 2rem;
+    h4{
+      font-size: 1.6rem;
+      font-weight: bold;
+      letter-spacing: 2px;
+      width: 100%;
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+    ul{
+      li{
+        margin: 1rem 0;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px dashed #cccccc;
+        img{
+          width: 6rem;
+        }
+        .vue-boxf1{
+          padding: 0 1rem;
+          h4{
+            font-size: 1.3rem;
+            margin-bottom: 0;
+            color: #454545;
+          }
+          p{
+            margin-top: 0.5rem;
+            color: #797979;
+          }
+          h5{
+            margin-top: 0.5rem;
+            color: #797979;
+          }
+        }
+      }
+    }
+  }
+}
