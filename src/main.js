@@ -12,6 +12,8 @@ Vue.config.debug = true;
 Vue.use(VueRouter);
 Vue.use(VueResource);
 
+
+
 (function(win, doc){
     let docEle = doc.documentElement,
         w = docEle.clientWidth;

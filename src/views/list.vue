@@ -3,7 +3,7 @@
 		<title-bar :titleBar="title" :second="second" @listenTitleBar="movieSort"></title-bar>
 		<div class="movie">
 			<ul>
-				<li v-for="item in items" class="clearfix">
+				<li v-for="item in items"  class="clearfix animated" v-bind:class="{ bounceInRight: listBounceIr }">
 					<router-link :to="{name: 'details', params: {id: item.id}}">
 						<img :src="item.images.large" />
 						<div class="info vue-boxf1">
@@ -32,18 +32,21 @@ export default {
 			title: '电影',
 			items: '',
 			nav: 'in_theaters',
-			second: true
+			second: true,
+			listBounceIr: false
 		}
 	},
 	methods: {
 		movieSort(sort){
 			this.nav = sort;
+			this.listBounceIr = !this.listBounceIr;
 			this.getMovieList(this.nav);
 		},
 		getMovieList(params){
 			this.$http.jsonp('https://api.douban.com/v2/movie/'+params+'?count=40').then(res => {
 				this.items = res.data.subjects;
 				//console.log(res.data);
+				this.listBounceIr = !this.bounceInRight;
 			})
 		}
 	},
